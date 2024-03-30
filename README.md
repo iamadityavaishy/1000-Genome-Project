@@ -1,7 +1,28 @@
+The 1000 Genomes Project set out to provide a comprehensive description of common human genetic
+variation by applying whole-genome sequencing to a diverse set of individuals from multiple populations.
+The central goal of this project is to describe most of the genetic variation that occurs at a population frequency greater
+than 1 percentage, the human genome comprises three billion bases, of which millions differences between any two
+genomes from different people.
+
+About the Dataset
+    We are given ‘.tsv’ (Tab Separated Values) files of the Genome dataset and each file has thousands of columns and millions of rows.
+
 Project Title: VCF Processing and K-Means Clustering for Genomic Analysis
 
 Purpose:
-    This project is designed for population analysis using genomic data. It preprocesses VCF files and applies K-means clustering to discover sub-populations based on genetic similarities.
+    This project is designed for population analysis using genomic data. It preprocesses VCF files and applies K-means clustering to discover
+    sub-populations based on genetic similarities.
+
+Implementation:-
+    • Decompress the zipped file to VCF format
+    • Read the file
+    • Removed the lines starting with ’##’ (contains Meta-information)
+    • Calculated the number of features in the dataset available
+    • Applied Chromosome number filter : an identifier from the reference genome
+    • Applied REF filter : Each base must be one of A,C,G,T (case insensitive).
+    • ALT filter : Comma separated list of alternate non-reference alleles.
+    • ’Filter’ filter : PASS if this position has passed all filters, i.e., a call is made at this position. Otherwise, if the site
+        has not passed all filters
 
 Software to be used:
     1. C compiler (e.g., GCC)
